@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #29211f; --muted: #756762; --cream: #f5f0e8;
+  --paper: #fbf8f2; --wine: #653b35; --gold: #b88d55;
+}
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; }
+.site-header, .site-footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 7vw; }
+.site-header { border-bottom: 1px solid #e9e0d5; }
+.wordmark { color: var(--ink); text-decoration: none; font-size: .9rem; font-weight: 600; letter-spacing: .02em; }
+.occasion, .back-link { color: var(--muted); text-decoration: none; font-size: .7rem; letter-spacing: .16em; }
+.section-wrap { width: min(1120px, 86vw); margin: auto; }
+.hero { min-height: 690px; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 8%; padding-top: 72px; padding-bottom: 82px; }
+.eyebrow { color: #ff3131; font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+h1, h2 { margin: 18px 0; font-family: "Playfair Display", Georgia, serif; font-weight: 500; letter-spacing: -.035em; line-height: 1.08; }
+h1 { font-size: clamp(3.2rem, 6vw, 5.8rem); }
+h2 { font-size: clamp(2.5rem, 4.5vw, 4.5rem); }
+h1 em, h2 em { color: var(--wine); font-weight: 500; }
+.intro { max-width: 390px; color: var(--muted); font-size: 1rem; line-height: 1.9; margin: 28px 0 36px; }
+.text-link { display: inline-flex; gap: 18px; align-items: center; color: var(--wine); font-size: .85rem; text-decoration: none; border-bottom: 1px solid #c9ad91; padding-bottom: 9px; }
+.carousel { min-width: 0; }
+.carousel-track { position: relative; height: 490px; overflow: hidden; background: #e8ddd0; }
+.slide { position: absolute; inset: 0; margin: 0; opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; pointer-events: none; }
+.slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 52px 26px 24px; color: white; font-family: "Playfair Display", serif; font-size: 1.3rem; background: linear-gradient(transparent, rgba(20,13,10,.72)); }
+.slide figcaption span { display: block; margin-bottom: 8px; font: 600 .62rem "DM Sans", sans-serif; letter-spacing: .18em; }
+.carousel-controls { display: flex; align-items: center; justify-content: space-between; padding-top: 17px; }
+.carousel-btn { width: 38px; height: 38px; border: 1px solid #d9cbbd; border-radius: 50%; background: transparent; color: var(--wine); cursor: pointer; font-size: 1rem; }
+.dots { display: flex; gap: 9px; }
+.dot { width: 7px; height: 7px; border: 0; border-radius: 50%; background: #d6c9bc; padding: 0; cursor: pointer; }
+.dot.active { background: var(--wine); transform: scale(1.3); }
+.bhai-section { background: var(--cream); padding: 105px 0 112px; }
+.bhai-inner { max-width: 850px; }
+.bhai-inner h2 { margin-bottom: 42px; }
+.message { max-width: 690px; margin-left: auto; color: #655954; font-size: 1rem; line-height: 2; }
+.message p { margin: 0 0 20px; }
+.signoff { color: var(--wine); font-family: "Playfair Display", serif; font-size: 1.25rem; }
+.button-link { display: inline-flex; gap: 26px; margin-top: 22px; padding: 16px 21px; background: var(--wine); color: white; text-decoration: none; font-size: .85rem; }
+.site-footer { color: #8a7d75; font-size: .72rem; border-top: 1px solid #e9e0d5; }
+.final-page { width: min(900px, 86vw); margin: auto; text-align: center; padding: 65px 0 90px; }
+.final-page h1 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 38px; }
+.portrait-frame { width: min(680px, 100%); height: min(200vw, 1000px); min-height: 500px; margin: 0 auto 35px; background: #e8ddd0; overflow: hidden; }
+.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.final-note { max-width: 610px; margin: 0 auto 32px; color: var(--muted); line-height: 1.9; }
+.final-note .signoff { margin-top: 20px; }
+.first {
+  background-color: #F5EBDD;
+}
+.second {
+  background-color: #fff5fa;
+}
+.site-footer {
+  background-color: #fff5fa;
+}
+body.page-two {
+  background-color: #ffdbf2;
+}
+@media (max-width: 760px) {
+  .site-header, .site-footer { padding: 19px 6vw; }
+  .occasion { font-size: .58rem; letter-spacing: .1em; }
+  .section-wrap { width: 88vw; }
+  .hero { grid-template-columns: 1fr; gap: 42px; padding-top: 58px; padding-bottom: 65px; }
+  .hero-copy { padding-right: 4vw; }
+  .carousel-track { height: 430px; }
+  .bhai-section { padding: 75px 0 82px; }
+  .message { margin-left: 0; }
+  .final-page { width: 88vw; padding-top: 52px; }
+  .portrait-frame { height: 112vw; max-height: 520px; min-height: 300px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+
+/* Full-width photographic background for the Diwali greeting section */
+.hero.section-wrap {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: none;
+  padding-left: max(7vw, calc((100vw - 1120px) / 2));
+  padding-right: max(7vw, calc((100vw - 1120px) / 2));
+  background:
+    linear-gradient(90deg,
+      rgba(255, 136, 32, 0.91) 0%,
+      rgba(250, 247, 241, 0.83) 42%,
+      rgba(255, 217, 183, 0.62) 100%),
+    url("1.jpg")
+    center / cover no-repeat;
+}
+@media (max-width: 0px) {
+  .hero.section-wrap {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    background:
+      linear-gradient(rgba(250, 247, 241, 0.88), rgba(250, 247, 241, 0.91)),
+      url("https://images.unsplash.com/photo-1604608672516-7d7f2b6c7b2a?auto=format&fit=crop&w=1400&q=85")
+      center / cover no-repeat;
+  }
+}
